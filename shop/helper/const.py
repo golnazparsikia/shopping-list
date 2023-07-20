@@ -1,0 +1,1 @@
+quit_word = ("quit", "exit", "ex", "q")
