@@ -1,6 +1,6 @@
 from shop.dictionary.products import ShoppingList
 from shop.helper.const import quit_word
-
+from shop.dictionary.products import NamePasswords
 class ShoppingListApp:
 
     @staticmethod
@@ -21,6 +21,17 @@ class ShoppingListApp:
                 plus = ShoppingList.shop_item[shop][0]
                 plus_list.append(plus)
         return sum(plus_list)
+    
+    @staticmethod
+    def get_name_password():
+        name = input("Enter your username: ")
+        password = input("Enter your password: ")
+        return name, password
+
+    @staticmethod
+    def name_password_exists(name, password):
+        return name in NamePasswords.login and int(password) in NamePasswords.login[name]
+
 
     @classmethod
     def add_to_list(cls, shop: str):
